@@ -1,9 +1,20 @@
 # Model Inference and Monitoring
-A codebase to support model deployment to KFServing or any application that supports HTTPS or gRPC API requests. The goal is to be able to:
-- Model Serving
-- Model Monitoring.
-- Out of distribution Detection, concept drift detection using [Alibi](https://github.com/SeldonIO/alibi) or [AIF360](https://github.com/Trusted-AI/AIF360#supported-bias-mitigation-algorithms)
+Entirely motivated by the paper [Underspecification Presents Challenges for Credibility in
+Modern Machine Learning](https://arxiv.org/pdf/2011.03395.pdf) and bringing these concerns closer to production, the curiousity here is to explore some of the existing tooling to monitor models in production to detect and log:
+- concept drift
+- stress test and other evalution
+- fairness and bias
+- out of distribution Detection, concept drift detection using [Alibi](https://github.com/SeldonIO/alibi) or [AIF360](https://github.com/Trusted-AI/AIF360#supported-bias-mitigation-algorithms)
 - Logging with KNative, Istio, Prometheus and Grafana
+
+In order to get more familiar with [KFServing](https://github.com/kubeflow/kfserving), we will attempt to perform this monitoring, logging and evaluation with this tooling.
+
+## Project Structure
+For now, we have a simple codebase to support model development and deployment to KFServing. First goals:
+- choose a model that is susceptible to underspecification
+- propose method to alleviate bias and underspecification
+- Use KFServing to serve model and 'pretend' this is production
+- Eventually log metrics for production grade monitoring
 
 ## Getting Started
 
